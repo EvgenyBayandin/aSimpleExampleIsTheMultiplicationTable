@@ -13,14 +13,19 @@ let secondNumber = getRandomInRange();
 template.textContent = `${firstNumber} * ${secondNumber}`;
 
 button.addEventListener('click', () => {
-  if (Number(input.value) === firstNumber * secondNumber) {
+  if (input.value == ''){
+		result.textContent = "Нужно указать ответ";
+		result.style.color = "red";
+	} 
+	else if (Number(input.value) === firstNumber * secondNumber) {
     result.textContent = "Верно";
 		result.style.color = "green";
 		
     firstNumber = getRandomInRange();
     secondNumber = getRandomInRange();
     template.textContent = `${firstNumber} * ${secondNumber}`;
-  } else {
+  } 
+	else {
     result.textContent = "Подумайте ещё";
 		result.style.color = "red";
   }
